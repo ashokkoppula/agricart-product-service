@@ -9,4 +9,6 @@ import lombok.NoArgsConstructor;
 public class ShopResponse {
     private Long id;
     private String name;
+    private String area;
+    private String shopType;
 }
