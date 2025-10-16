@@ -16,7 +16,7 @@ public class District {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)

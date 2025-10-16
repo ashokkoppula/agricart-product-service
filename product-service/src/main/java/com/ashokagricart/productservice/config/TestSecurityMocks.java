@@ -1,0 +1,8 @@
+package com.ashokagricart.productservice.config;
+
+
+//import org.springframework.boot.test.context.TestConfiguration;
+
+//@TestConfiguration
+public class TestSecurityMocks {
+}

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-interface StateJpaRepository extends JpaRepository<State, Long> {
-    List<State> findAllByOrderByName();
+public interface StateJpaRepository extends JpaRepository<State, Long> {
+    List<State> findAllByOrderByNameAsc();
 
 }
