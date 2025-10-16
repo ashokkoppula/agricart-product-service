@@ -3,7 +3,7 @@ package com.ashokagricart.productservice;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+@SpringBootTest(classes = ProductServiceApplication.class)
 class ProductServiceApplicationTests {
 
 	@Test
