@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("products/v1")
@@ -18,7 +19,7 @@ public class ShopController {
     // GET /api/v1/cities/1/shops?type=pesticide
     @GetMapping("/cities/{cityId}/shops")
     public ResponseEntity<List<ShopResponse>> getShopsByCityAndType(
-            @PathVariable Long cityId,
+            @PathVariable UUID cityId,
             @RequestParam(name = "type", required = true) String shopType
     ){
         if(!"pesticide".equalsIgnoreCase(shopType)){
@@ -27,7 +28,7 @@ public class ShopController {
         return ResponseEntity.ok(shopService.getShopsByCityAndType(cityId, shopType));
     }
 @GetMapping("/shops/{shopId}/products")
-    public ResponseEntity<List<ProductResponse>> getProductsByShop(@PathVariable Long shopId){
+    public ResponseEntity<List<ProductResponse>> getProductsByShop(@PathVariable UUID shopId){
         return ResponseEntity.ok(shopService.getProductsByShop(shopId));
 }
 

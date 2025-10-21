@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -27,7 +28,7 @@ public class DistrictServiceImpl implements DistrictService {
     }
 
     @Override
-    public List<DistrictResponse> getDistrictByState(Long stateId){
+    public List<DistrictResponse> getDistrictByState(UUID stateId){
         stateDao.findById(stateId).orElseThrow(
                 () -> new ResourceNotFoundException("State not found with ID: "+stateId));
         return districtDao.findByStateId(stateId).stream()

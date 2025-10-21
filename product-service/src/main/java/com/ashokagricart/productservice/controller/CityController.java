@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("products/v1/districts/{districtId}/cities")
@@ -19,7 +20,7 @@ public class CityController {
     private CityService cityService;
 
     @GetMapping
-    public ResponseEntity<List<CityResponse>> getCitiesByDistrict(@PathVariable Long districtId){
+    public ResponseEntity<List<CityResponse>> getCitiesByDistrict(@PathVariable UUID districtId){
         return ResponseEntity.ok(cityService.getCitiesByDistrict(districtId));
     }
 
