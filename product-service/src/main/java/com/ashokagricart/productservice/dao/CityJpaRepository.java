@@ -4,7 +4,8 @@ import com.ashokagricart.productservice.model.City;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.UUID;
 
-public interface CityJpaRepository extends JpaRepository<City, Long> {
-        List<City> findByDistrictId(Long districtId);
+public interface CityJpaRepository extends JpaRepository<City, UUID> {
+        List<City> findByDistrictId(UUID districtId);
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public class StateDAOImpl implements StateDAO {
@@ -26,7 +27,7 @@ public class StateDAOImpl implements StateDAO {
     }
 
     @Override
-    public Optional<State> findById(Long id) {
+    public Optional<State> findById(UUID id) {
         return stateJpaRepository.findById(id);
     }
 

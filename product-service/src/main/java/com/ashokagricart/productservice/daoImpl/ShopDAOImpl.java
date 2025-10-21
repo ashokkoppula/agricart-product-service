@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public class ShopDAOImpl implements ShopDAO {
@@ -20,12 +21,12 @@ public class ShopDAOImpl implements ShopDAO {
     }
 
     @Override
-    public List<Shop> findByCityIdAndShopType(Long cityId, String shopType){
+    public List<Shop> findByCityIdAndShopType(UUID cityId, String shopType){
         return shopJpaRepository.findByCityIdAndShopType(cityId, shopType);
     }
 
     @Override
-    public Optional<Shop> findById(Long id){
+    public Optional<Shop> findById(UUID id){
         return shopJpaRepository.findById(id);
     }
 

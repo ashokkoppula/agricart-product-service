@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,7 +33,7 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public List<ShopResponse> getShopsByCityAndType(Long cityId, String shopType){
+    public List<ShopResponse> getShopsByCityAndType(UUID cityId, String shopType){
 
         cityDao.findById(cityId).orElseThrow(
                 () -> new ResourceNotFoundException("City not found with ID "+cityId));
@@ -43,7 +44,7 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public List<ProductResponse> getProductsByShop(Long shopId){
+    public List<ProductResponse> getProductsByShop(UUID shopId){
         shopDao.findById(shopId).orElseThrow(
                 () -> new ResourceNotFoundException("Shop not found with Id "+shopId));
 

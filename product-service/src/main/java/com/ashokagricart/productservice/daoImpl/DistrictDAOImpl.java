@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public class DistrictDAOImpl implements DistrictDAO {
@@ -20,12 +21,12 @@ public class DistrictDAOImpl implements DistrictDAO {
     }
 
     @Override
-    public List<District> findByStateId(Long stateId){
+    public List<District> findByStateId(UUID stateId){
         return districtJpaRepository.findByStateId(stateId);
     }
 
     @Override
-    public Optional<District> findById(Long id){
+    public Optional<District> findById(UUID id){
         return districtJpaRepository.findById(id);
     }
 

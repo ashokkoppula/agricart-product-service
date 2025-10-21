@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
+
 @Repository
 public class ProductDAOImpl implements ProductDAO {
 
@@ -19,12 +21,12 @@ public class ProductDAOImpl implements ProductDAO {
     }
 
     @Override
-    public List<Product> findByShopId(Long shopId){
+    public List<Product> findByShopId(UUID shopId){
         return productJpaRepository.findByShopId(shopId);
     }
 
     @Override
-    public Optional<Product> findById(Long id){
+    public Optional<Product> findById(UUID id){
         return productJpaRepository.findById(id);
     }
 

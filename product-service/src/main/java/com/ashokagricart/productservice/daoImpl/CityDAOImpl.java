@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public class CityDAOImpl implements CityDAO {
@@ -16,16 +17,17 @@ public class CityDAOImpl implements CityDAO {
 
     @Autowired
     public CityDAOImpl(CityJpaRepository cityJpaRepository){
+
         this.cityJpaRepository = cityJpaRepository;
     }
 
     @Override
-    public List<City> findByDistrictId(Long districtId){
+    public List<City> findByDistrictId(UUID districtId){
         return cityJpaRepository.findByDistrictId(districtId);
     }
 
     @Override
-    public Optional<City> findById(Long id){
+    public Optional<City> findById(UUID id){
         return cityJpaRepository.findById(id);
     }
 
